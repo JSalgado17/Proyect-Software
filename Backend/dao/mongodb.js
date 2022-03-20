@@ -1,15 +1,16 @@
 const MongoClient = require('mongodb').MongoClient;
 
-let db = null;
-let client = null
 
-const getDb = async () =>{
+let db = null;
+let client = null;
+
+const getDb = async () => {
     if (db) {
         return db;
     }
     if (!client) {
         client = await MongoClient.connect(process.env.MONGOURI, {
-            userNewUrlParser: true,
+            useNewUrlParser: true,
             useUnifiedTopology: true
         });
     }

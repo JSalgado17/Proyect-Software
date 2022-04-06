@@ -9,9 +9,9 @@ require('./headerVerifyMiddleware');
 
 
 const seguridadRoutes = require('./seguridad/seguridad');
-
+const habitacionesRoutes = require('./habitaciones/habitaciones');
 //public
 router.use('/seguridad', verifyApiHeaderToken, seguridadRoutes);
-
+router.use('/habitaciones', habitacionesRoutes)
 
 module.exports = router;
